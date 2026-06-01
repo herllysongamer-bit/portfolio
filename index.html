@@ -39,7 +39,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Custom scrollbar to match the design */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -89,6 +89,7 @@
 </head>
 <body class="relative min-h-screen selection:bg-accent selection:text-black overflow-x-hidden">
 
+    <!-- FLOATING SOCIAL LINKS (Reference: image_5ce97a.png sidebar layout) -->
     <div class="no-print fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 bg-cardBg/80 backdrop-blur-md p-3 rounded-full border border-white/5 shadow-2xl">
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/5 transition-all duration-300" title="GitHub">
             <i class="fab fa-github text-lg"></i>
@@ -106,7 +107,6 @@
 
     <header class="no-print sticky top-0 z-40 bg-darkBg/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo area referencing image_5ce97a.png layout -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300">
                     <span class="text-accent font-heading font-extrabold text-xl">H</span>
@@ -129,13 +129,11 @@
 
             <!-- Language Switcher & Action Button -->
             <div class="flex items-center gap-4">
-                <!-- Dual language switcher -->
                 <div class="flex bg-white/5 p-1 rounded-full border border-white/10 text-xs">
                     <button id="btn-fr" onclick="switchLanguage('fr')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-accent text-darkBg">FR</button>
                     <button id="btn-en" onclick="switchLanguage('en')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-gray-400 hover:text-white">EN</button>
                 </div>
 
-                <!-- Print/Download PDF Button (Ref: Download CV in image_5ce97a.png) -->
                 <button onclick="window.print()" class="glow-hover hidden sm:flex items-center gap-2 bg-white/5 hover:bg-accent hover:text-darkBg border border-white/10 hover:border-accent text-white font-medium text-xs px-5 py-2.5 rounded-full transition-all duration-300">
                     <i class="fas fa-file-pdf"></i>
                     <span data-i18n="nav_download">Imprimer CV</span>
@@ -145,32 +143,27 @@
     </header>
 
     <section id="accueil" class="no-print relative pt-12 pb-24 md:py-32 overflow-hidden flex items-center">
-        <!-- Abstract gradient mesh overlay -->
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.08),transparent_40%)] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 flex flex-col justify-center text-left">
-                <!-- Subtitle Tag -->
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 w-fit mb-6">
                     <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
                     <span class="text-xs font-semibold tracking-wider text-accent uppercase" data-i18n="hero_tag">Disponible pour Entrevues • Québec</span>
                 </div>
 
-                <!-- Title block with Syne font -->
                 <h1 class="font-heading font-extrabold text-5xl md:text-7xl leading-none text-white tracking-tight mb-6">
                     <span class="block text-gray-400" data-i18n="hero_title_1">CREATIVE</span>
                     <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400 font-black" data-i18n="hero_title_2">DESIGNER</span>
                 </h1>
 
-                <!-- Bio description -->
                 <p class="text-gray-400 text-lg max-w-xl mb-8 leading-relaxed" data-i18n="hero_description">
                     Bonjour, je suis Herllyson Souza. Un concepteur d'interface UI/UX et designer graphique passionné basé à Longueuil. Je combine l'art numérique et la conception technique pour créer des expériences marquantes.
                 </p>
 
-                <!-- Actions -->
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="glow-hover inline-flex items-center gap-2 bg-accent hover:bg-accentHover text-darkBg font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-accent/20">
-                        <span data-i18n="hero_btn_contact">Me Contacter</span>
+                        <span data-i18n="hero_btn_contact">Mon Contacter</span>
                         <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                     <a href="#experience" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-medium px-8 py-4 rounded-full transition-all duration-300">
@@ -181,7 +174,6 @@
 
             <!-- Profile presentation with arch-shaped backing referencing image_5ce97a.png -->
             <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
-                <!-- Floating review card style from image_5ce97a.png -->
                 <div class="absolute -top-6 -left-6 md:left-12 bg-cardBg/90 border border-white/10 backdrop-blur-md px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-4 z-20">
                     <div class="flex -space-x-3">
                         <span class="w-8 h-8 rounded-full bg-accent/20 border border-darkBg flex items-center justify-center text-xs font-bold text-accent">Ps</span>
@@ -190,19 +182,15 @@
                     </div>
                     <div>
                         <div class="text-xs text-gray-400" data-i18n="hero_floating_tech">Spécialiste</div>
-                        <div class="text-sm font-bold text-white">Adobe Creative Suite</div>
+                        <div class="text-sm font-bold text-white">Adobe Creative Cloud</div>
                     </div>
                 </div>
 
-                <!-- Profile Container with arch styling from reference -->
                 <div class="relative w-72 h-[400px] md:w-80 md:h-[450px]">
-                    <!-- Arch Background representing image_5ce97a.png structure -->
                     <div class="absolute inset-0 bg-accent rounded-t-full opacity-10 blur-xl"></div>
                     <div class="absolute inset-0 bg-gradient-to-b from-accent/20 to-transparent rounded-t-full border-t border-x border-accent/30"></div>
                     
-                    <!-- Dynamic avatar wrapper -->
                     <div class="absolute inset-2 bg-cardBg rounded-t-full overflow-hidden border border-white/5 flex items-end justify-center">
-                        <!-- Custom vector silhouette or avatar -->
                         <svg class="w-4/5 h-4/5 text-gray-700 mb-0 opacity-80" viewBox="0 0 100 100" fill="currentColor">
                             <path d="M50 5C30.7 5 15 20.7 15 40c0 12.1 6.2 22.8 15.5 29.2.2.1.4.3.4.5C21.7 75.2 15 84.8 15 95c0 2.8 2.2 5 5 5h60c2.8 0 5-2.2 5-5 0-10.2-6.7-19.8-15.9-25.3.1-.2.3-.4.4-.5C78.8 62.8 85 52.1 85 40 85 20.7 69.3 5 50 5zm0 10c13.8 0 25 11.2 25 25S63.8 65 50 65 25 53.8 25 40 36.2 15 50 15z" />
                         </svg>
@@ -217,26 +205,22 @@
 
     <section class="no-print bg-cardBg border-y border-white/5 py-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 justify-items-center text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
                 <div class="space-y-1">
                     <div class="text-3xl md:text-4xl font-heading font-extrabold text-accent">7+</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-widest" data-i18n="stat_exp">Années d'Expérience</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold" data-i18n="stat_exp">Années d'Expérience</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-3xl md:text-4xl font-heading font-extrabold text-white">50+</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-widest" data-i18n="stat_projects">Projets Réussis</div>
+                    <div class="text-3xl md:text-4xl font-heading font-extrabold text-white">10+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold" data-i18n="stat_projects">Projets Réussis</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-3xl md:text-4xl font-heading font-extrabold text-accent">100%</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-widest" data-i18n="stat_satisfaction">Satisfaction client</div>
+                    <div class="text-3xl md:text-4xl font-heading font-extrabold text-white">1</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold text-accent" data-i18n="stat_gamejams">Game Jam Gagnée</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-3xl md:text-4xl font-heading font-extrabold text-white">3+</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-widest" data-i18n="stat_gamejams">Game Jams</div>
-                </div>
-                <div class="space-y-1 col-span-2 md:col-span-1">
                     <div class="text-3xl md:text-4xl font-heading font-extrabold text-accent">4</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-widest" data-i18n="stat_languages">Langues Maîtrisées</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold" data-i18n="stat_languages">Langues Maîtrisées</div>
                 </div>
             </div>
         </div>
@@ -245,7 +229,6 @@
     <section id="about" class="no-print py-24 relative">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-5 flex justify-center">
-                <!-- Arched secondary visual mirroring bottom section of reference -->
                 <div class="relative w-full max-w-sm aspect-[4/5] bg-cardBg rounded-3xl overflow-hidden border border-white/5 p-4 flex flex-col justify-between">
                     <div class="flex items-center justify-between border-b border-white/5 pb-4">
                         <span class="text-xs text-accent font-mono">01 // IDENTITY</span>
@@ -261,7 +244,7 @@
                             <i class="fas fa-fingerprint"></i>
                         </div>
                         <div>
-                            <h3 class="font-heading font-bold text-xl text-white">Herllyson da Silva Souza</h3>
+                            <h3 class="font-heading font-bold text-xl text-white">Herllyson Souza</h3>
                             <p class="text-xs text-gray-400 mt-1">Longueuil (Québec)</p>
                         </div>
                     </div>
@@ -269,7 +252,7 @@
                     <div class="bg-darkBg/50 rounded-xl p-4 border border-white/5 space-y-2">
                         <div class="flex justify-between text-xs">
                             <span class="text-gray-400">Courriel:</span>
-                            <span class="text-white font-mono">herllyson.canada@gmail.com</span>
+                            <span class="text-white font-mono text-[11px] select-all">herllyson.canada@gmail.com</span>
                         </div>
                         <div class="flex justify-between text-xs">
                             <span class="text-gray-400">Tel:</span>
@@ -288,10 +271,9 @@
                 </div>
 
                 <p class="text-gray-400 leading-relaxed text-base" data-i18n="about_text_1">
-                    Designer graphique multidisciplinaire originaire du Brésil et aujourd'hui installé à Longueuil, Québec. Diplômé d'un Baccalauréat en Design Graphique, je propose une synergie parfaite entre les méthodologies de design traditionnelles et les outils technologiques émergents, incluant les outils IA et l'UI/UX d'applications mobiles.
+                    Designer graphique multidisciplinaire originaire du Brésil et aujourd'hui installé à Longueuil, Québec. Diplômé d'un Baccalauréat en Design Graphique, je propose une synergie parfaite entre les méthodologies de design traditionnelles et les outils technologiques émergents, incluant les outils IA e l'UI/UX d'applications mobiles.
                 </p>
 
-                <!-- Checklist matching image_5ce97a.png -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="flex items-start gap-3">
                         <div class="mt-1 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center text-[10px] text-accent">
@@ -307,7 +289,7 @@
                             <i class="fas fa-check"></i>
                         </div>
                         <div>
-                            <span class="font-bold text-white text-sm" data-i18n="about_bullet_2_title">Ergonomie logicielle & UI/UX</span>
+                            <span class="font-bold text-white text-sm" data-i18n="about_bullet_2_title">Ergonomie logicielle & UI</span>
                             <p class="text-xs text-gray-400 mt-0.5" data-i18n="about_bullet_2_desc">Prototypes interactifs centrés sur l'expérience utilisateur.</p>
                         </div>
                     </div>
@@ -331,30 +313,85 @@
                     </div>
                 </div>
 
-                <!-- Languages section -->
+                <!-- Languages section (Consolidated to 4 dynamic interactive elements) -->
                 <div class="bg-cardBg rounded-2xl p-6 border border-white/5">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4" data-i18n="languages_title">Langues parlées</h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-darkBg/50 p-3 rounded-xl border border-white/5 text-center">
-                            <div class="text-xs text-gray-400">Português</div>
-                            <div class="text-sm font-bold text-accent mt-1" data-i18n="lang_native">Langue Maternelle</div>
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2" data-i18n="languages_title">Langues parlées</h4>
+                    <p class="text-[10px] text-gray-500 mb-4 italic" data-i18n="languages_instruction">Cliquez sur chaque langue pour explorer mes compétences en détail.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Portuguese Card -->
+                        <div onclick="toggleLanguage('pt')" class="cursor-pointer bg-darkBg/50 hover:bg-darkBg p-4 rounded-xl border border-white/5 hover:border-accent/30 text-center flex flex-col justify-between transition-all duration-300 min-h-[110px] group relative select-none">
+                            <div class="absolute top-2 right-2 text-[9px] text-gray-600 group-hover:text-accent transition-colors duration-300">
+                                <i id="chevron-pt" class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                            </div>
+                            <div class="w-full">
+                                <div class="text-xs text-gray-400 font-semibold">Portuguese</div>
+                                <div class="text-xs sm:text-sm font-bold text-accent mt-2 break-words leading-tight" data-i18n="lang_native">Langue Maternelle</div>
+                            </div>
+                            <!-- Slide detail panel -->
+                            <div id="panel-pt" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-left w-full">
+                                <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden mt-3 shadow-inner">
+                                    <div class="h-full bg-accent rounded-full shadow-[0_0_8px_rgba(16,185,129,0.6)]" style="width: 100%;"></div>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mt-2 leading-snug" data-i18n="lang_pt_desc">100% • Maîtrise totale, rédaction créative et communication fluide.</p>
+                            </div>
                         </div>
-                        <div class="bg-darkBg/50 p-3 rounded-xl border border-white/5 text-center">
-                            <div class="text-xs text-gray-400">Français</div>
-                            <div class="text-sm font-bold text-white mt-1" data-i18n="lang_inter_adv">Intermédiaire/Avancé</div>
+                        
+                        <!-- French Card -->
+                        <div onclick="toggleLanguage('fr')" class="cursor-pointer bg-darkBg/50 hover:bg-darkBg p-4 rounded-xl border border-white/5 hover:border-accent/30 text-center flex flex-col justify-between transition-all duration-300 min-h-[110px] group relative select-none">
+                            <div class="absolute top-2 right-2 text-[9px] text-gray-600 group-hover:text-accent transition-colors duration-300">
+                                <i id="chevron-fr" class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                            </div>
+                            <div class="w-full">
+                                <div class="text-xs text-gray-400 font-semibold">Français</div>
+                                <div class="text-xs sm:text-sm font-bold text-white mt-2 break-words leading-tight" data-i18n="lang_inter_adv">Intermédiaire / Avancé</div>
+                            </div>
+                            <!-- Slide detail panel -->
+                            <div id="panel-fr" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-left w-full">
+                                <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden mt-3 shadow-inner">
+                                    <div class="h-full bg-accent rounded-full shadow-[0_0_8px_rgba(16,185,129,0.6)]" style="width: 80%;"></div>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mt-2 leading-snug" data-i18n="lang_fr_desc">80% • Rédaction professionnelle, réunions et pitchs de design.</p>
+                            </div>
                         </div>
-                        <div class="bg-darkBg/50 p-3 rounded-xl border border-white/5 text-center">
-                            <div class="text-xs text-gray-400">Español</div>
-                            <div class="text-sm font-bold text-white mt-1" data-i18n="lang_inter_adv">Intermédiaire/Avancé</div>
+                        
+                        <!-- Spanish Card -->
+                        <div onclick="toggleLanguage('es')" class="cursor-pointer bg-darkBg/50 hover:bg-darkBg p-4 rounded-xl border border-white/5 hover:border-accent/30 text-center flex flex-col justify-between transition-all duration-300 min-h-[110px] group relative select-none">
+                            <div class="absolute top-2 right-2 text-[9px] text-gray-600 group-hover:text-accent transition-colors duration-300">
+                                <i id="chevron-es" class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                            </div>
+                            <div class="w-full">
+                                <div class="text-xs text-gray-400 font-semibold">Español</div>
+                                <div class="text-xs sm:text-sm font-bold text-white mt-2 break-words leading-tight" data-i18n="lang_inter_adv">Intermédiaire / Avancé</div>
+                            </div>
+                            <!-- Slide detail panel -->
+                            <div id="panel-es" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-left w-full">
+                                <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden mt-3 shadow-inner">
+                                    <div class="h-full bg-accent rounded-full shadow-[0_0_8px_rgba(16,185,129,0.6)]" style="width: 75%;"></div>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mt-2 leading-snug" data-i18n="lang_es_desc">75% • Conversation fluide et excellente compréhension technique.</p>
+                            </div>
                         </div>
-                        <div class="bg-darkBg/50 p-3 rounded-xl border border-white/5 text-center">
-                            <div class="text-xs text-gray-400">English</div>
-                            <div class="text-sm font-bold text-gray-400 mt-1" data-i18n="lang_basic">Base</div>
+
+                        <!-- English Card (Restored with interactive state) -->
+                        <div onclick="toggleLanguage('en_lang')" class="cursor-pointer bg-darkBg/50 hover:bg-darkBg p-4 rounded-xl border border-white/5 hover:border-accent/30 text-center flex flex-col justify-between transition-all duration-300 min-h-[110px] group relative select-none">
+                            <div class="absolute top-2 right-2 text-[9px] text-gray-600 group-hover:text-accent transition-colors duration-300">
+                                <i id="chevron-en_lang" class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                            </div>
+                            <div class="w-full">
+                                <div class="text-xs text-gray-400 font-semibold">English</div>
+                                <div class="text-xs sm:text-sm font-bold text-white mt-2 break-words leading-tight" data-i18n="lang_basic">Débutant / Base</div>
+                            </div>
+                            <!-- Slide detail panel -->
+                            <div id="panel-en_lang" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-left w-full">
+                                <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden mt-3 shadow-inner">
+                                    <div class="h-full bg-accent rounded-full shadow-[0_0_8px_rgba(16,185,129,0.6)]" style="width: 45%;"></div>
+                                </div>
+                                <p class="text-[10px] text-gray-400 mt-2 leading-snug" data-i18n="lang_en_desc">45% • Lecture technique, terminologie UI/UX et bases de l'industrie.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Call to Action button to about.html -->
                 <div class="pt-4">
                     <a href="about.html" class="glow-hover inline-flex items-center gap-3 bg-white/5 hover:bg-accent hover:text-darkBg border border-white/10 hover:border-accent text-white font-bold px-6 py-3.5 rounded-full transition-all duration-300 text-sm">
                         <span data-i18n="about_more_btn">Voir ma Fiche de Contact</span>
@@ -375,18 +412,15 @@
 
             <!-- Vertical Timeline Scroll -->
             <div class="relative border-l-2 border-white/10 pl-6 ml-4 md:ml-32 space-y-16">
-                <!-- Glowing timeline indicator tracker line -->
                 <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent to-transparent"></div>
 
                 <!-- ITEM 1: FREELANCE -->
                 <div class="relative group">
-                    <!-- Date badge absolute on left for desktop -->
                     <div class="hidden md:block absolute -left-40 top-1 text-right w-28">
                         <span class="text-accent font-heading font-bold block">2023 - Présent</span>
                         <span class="text-[10px] text-gray-400 uppercase tracking-widest" data-i18n="time_current">En cours</span>
                     </div>
 
-                    <!-- Timeline anchor dot -->
                     <div class="absolute -left-[31px] top-2.5 w-4 h-4 rounded-full bg-darkBg border-2 border-accent group-hover:bg-accent transition-colors duration-300"></div>
 
                     <div class="bg-cardBg p-8 rounded-2xl border border-white/5 hover:border-accent/10 transition-all duration-300 shadow-xl">
@@ -400,7 +434,7 @@
                         </div>
                         <ul class="text-sm text-gray-300 space-y-3 list-disc pl-4 leading-relaxed">
                             <li data-i18n="exp_desc_1_pt1">Conception et développement de l'identité visuelle complète et de matériel promotionnel (bannières) pour des commerces de détail locaux, incluant le <strong>Dépanneur Holla Panini</strong>.</li>
-                            <li data-i18n="exp_desc_1_pt2">Création de cartes de visite haut de gamme personnalisées pour représenter de manière élégante l'identité de marque de l'entreprise <strong>FREYWILLE</strong>.</li>
+                            <li data-i18n="exp_desc_1_pt2">Création de cartes de visite haut de gamme personnalisées para representar de maneira elegante l'identité de marque de l'entreprise <strong>FREYWILLE</strong>.</li>
                             <li data-i18n="exp_desc_1_pt3">Gestion autonome de l'intégralité des projets créatifs, de l'analyse des besoins du client à la livraison des livrables finaux optimisés pour l'impression et les médias web.</li>
                         </ul>
                     </div>
@@ -498,17 +532,14 @@
                 </p>
             </div>
 
-            <!-- Modern Card Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: Running War -->
+            <!-- Modern Card Grid with custom images pre-loaded with no padding container -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1: Running War (Now fully stretched as cover image) -->
                 <div class="group bg-darkBg rounded-2xl overflow-hidden border border-white/5 hover:border-accent/20 transition-all duration-300 flex flex-col justify-between">
                     <div>
-                        <!-- Simulated premium mockup vector representation -->
                         <div class="relative aspect-video bg-gradient-to-tr from-accent/20 to-emerald-950/40 flex items-center justify-center overflow-hidden">
-                            <span class="text-6xl text-accent/20 absolute font-extrabold font-heading select-none transform -rotate-12">RUNNING WAR</span>
-                            <div class="w-16 h-16 rounded-2xl bg-darkBg/90 border border-white/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                <i class="fas fa-gamepad text-2xl"></i>
-                            </div>
+                            <img src="https://kpopdemonhunterscoloringpages.com/characters/rumi-1.png" alt="Running War" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/08080a?text=Running+War';">
+                            <div class="absolute inset-0 bg-darkBg/35 z-0"></div>
                         </div>
                         <div class="p-6">
                             <span class="text-xs text-accent font-mono uppercase tracking-widest" data-i18n="proj_cat_game">JEU MOBILE / BRANDING</span>
@@ -531,10 +562,8 @@
                 <div class="group bg-darkBg rounded-2xl overflow-hidden border border-white/5 hover:border-accent/20 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="relative aspect-video bg-gradient-to-tr from-blue-900/30 to-emerald-950/40 flex items-center justify-center overflow-hidden">
-                            <span class="text-6xl text-emerald-300/10 absolute font-extrabold font-heading select-none transform rotate-12">VEDIC APP</span>
-                            <div class="w-16 h-16 rounded-2xl bg-darkBg/90 border border-white/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                <i class="fas fa-layer-group text-2xl"></i>
-                            </div>
+                            <img src="https://i.ytimg.com/vi/UNXsatjDB4M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAeYe8KKvPn1jMW6P12MBCMLbYOAQ" alt="VEDIC - The Journey" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/08080a?text=VEDIC+App';">
+                            <div class="absolute inset-0 bg-darkBg/35 z-0"></div>
                         </div>
                         <div class="p-6">
                             <span class="text-xs text-accent font-mono uppercase tracking-widest">UI/UX / ARCHITECTURE</span>
@@ -557,10 +586,8 @@
                 <div class="group bg-darkBg rounded-2xl overflow-hidden border border-white/5 hover:border-accent/20 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="relative aspect-video bg-gradient-to-tr from-accent/20 to-zinc-900 flex items-center justify-center overflow-hidden">
-                            <span class="text-6xl text-white/5 absolute font-extrabold font-heading select-none transform -rotate-6">FAKE PRIN</span>
-                            <div class="w-16 h-16 rounded-2xl bg-darkBg/90 border border-white/10 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                <i class="fas fa-stopwatch text-2xl"></i>
-                            </div>
+                            <img src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQYjg1BCEO_hzPKcgaNGxLk82EIxfphFugeyZA5lLIiW49jclf9Imvno-tUrIB1oJ35kprIWU3YkgveQ-MRmP5Avcy8h5x7LMoSQ1lXyA7JeRMaYJBfIQitbF8jX6hT_R_QmnVH0CRdnsroefGw9amfUiCXs.jpg?r=d23" alt="Fake Prin" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/08080a?text=Fake+Prin';">
+                            <div class="absolute inset-0 bg-darkBg/35 z-0"></div>
                         </div>
                         <div class="p-6">
                             <span class="text-xs text-accent font-mono uppercase tracking-widest" data-i18n="proj_cat_jam">CONCOURS CRÉATIF / SPEED DESIGN</span>
@@ -597,7 +624,6 @@
                     </p>
 
                     <div class="space-y-4 pt-6">
-                        <!-- Card: Phone -->
                         <div class="flex items-center gap-4 p-4 rounded-xl bg-darkBg/50 border border-white/5">
                             <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                                 <i class="fas fa-phone-alt"></i>
@@ -607,7 +633,6 @@
                                 <a href="tel:5794235746" class="text-sm font-bold text-white hover:text-accent transition-colors">579 423-5746</a>
                             </div>
                         </div>
-                        <!-- Card: Mail -->
                         <div class="flex items-center gap-4 p-4 rounded-xl bg-darkBg/50 border border-white/5">
                             <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                                 <i class="far fa-envelope"></i>
@@ -620,7 +645,6 @@
                     </div>
                 </div>
 
-                <!-- Live and responsive direct mail form -->
                 <div class="lg:col-span-7 bg-darkBg p-6 md:p-10 rounded-2xl border border-white/5">
                     <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -673,7 +697,6 @@
 
         <!-- Print Grid Body -->
         <div class="grid grid-cols-12 gap-8">
-            <!-- Print Content Left (Work experiences) -->
             <div class="col-span-8 space-y-6">
                 <div>
                     <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-2 mb-4">EXPÉRIENCES PROFESSIONNELLES</h2>
@@ -717,7 +740,7 @@
                             <ul class="text-[11px] text-slate-700 list-disc pl-4 mt-2 space-y-1">
                                 <li>Assurer la mise en page, la typographie et la préparation graphique de documents de recherche et de publications institutionnelles officielles.</li>
                                 <li>Concevoir des couvertures percutantes pour des livres et des rapports en utilisant Photoshop et Illustrator.</li>
-                                <li>Effectuer l'édition, la retouche d'images complexes et la création d'infographies pour la vulgarisation de données.</li>
+                                <li>Effectuer l'édition, la retouche d'images complexes e la criação d'infographies pour la vulgarisation de données.</li>
                             </ul>
                         </div>
                     </div>
@@ -733,13 +756,12 @@
                         </div>
                         <div>
                             <h3 class="text-xs font-bold text-slate-800">Game Jam - Fake Prin</h3>
-                            <p class="text-[11px] text-slate-700">Développement rapide d'interfaces et de concepts visuels sous contrainte de temps lors d'un défi de création en équipe.</p>
+                            <p class="text-[11px] text-slate-700">Développement rapide d'interfaces et de concepts visuels sous contrainte de temps lors d'un défi de création en équipe. (Gagnant)</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Print Sidebar Right -->
             <div class="col-span-4 space-y-6">
                 <!-- Print Technical -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -755,7 +777,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-slate-800">Intelligence Artificielle:</h4>
-                            <p class="text-slate-600 mt-1">Optimisation d'actifs visuels et de flux de travail créatifs.</p>
+                            <p class="text-slate-600 mt-1">Optimisation d'actifs visuels e de flux de travail créatifs.</p>
                         </div>
                     </div>
                 </div>
@@ -777,14 +799,14 @@
                     </div>
                 </div>
 
-                <!-- Print Languages -->
+                <!-- Print Languages (Matches 4 Languages) -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
                     <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">LANGUES</h2>
                     <ul class="space-y-1 text-[11px] text-slate-700">
                         <li><strong>Portugais :</strong> Langue maternelle</li>
                         <li><strong>Français :</strong> Intermédiaire/Avancé</li>
                         <li><strong>Espagnol :</strong> Intermédiaire/Avancé</li>
-                        <li><strong>Anglais :</strong> Notions de base</li>
+                        <li><strong>Anglais :</strong> Connaissances de base</li>
                     </ul>
                 </div>
             </div>
@@ -813,7 +835,6 @@
     </footer>
 
     <script>
-        // Full translation dictionary
         const translations = {
             fr: {
                 nav_subtitle: "DESIGNER GRAPHIQUE",
@@ -827,15 +848,14 @@
                 hero_tag: "Disponible pour Entrevues • Québec",
                 hero_title_1: "CREATIVE",
                 hero_title_2: "DESIGNER",
-                hero_description: "Bonjour, je suis Herllyson Souza. Un concepteur d'interface UI/UX et designer graphique passionné basé à Longueuil. Je combine l'art numérique et la conception technique pour créer des expériences marquantes.",
+                hero_description: "Bonjour, je suis Herllyson Souza. Un concepteur d'interface UI/UX et designer graphique passionné basé à Longueuil. Je combine l'art numérique et la conception technique para criar des expériences marquantes.",
                 hero_btn_contact: "Me Contacter",
                 hero_btn_cv: "Voir le Parcours",
                 hero_floating_tech: "Spécialiste",
                 hero_status_pill: "RECRUTEZ-MOI",
-                stat_exp: "Années d'Expérience",
+                stat_exp: "An d'Expérience",
                 stat_projects: "Projets Réussis",
-                stat_satisfaction: "Satisfaction client",
-                stat_gamejams: "Game Jams",
+                stat_gamejams: "Game Jam Gagnée",
                 stat_languages: "Langues Maîtrisées",
                 about_tag: "À propos de moi",
                 about_title: "Prêt à élever l'impact visuel de votre marque.",
@@ -850,18 +870,14 @@
                 about_bullet_4_desc: "Création rapide d'actifs créatifs et automatisation des pipelines.",
                 about_more_btn: "Voir ma Fiche de Contact",
                 languages_title: "Langues parlées",
+                languages_instruction: "Cliquez sur chaque langue pour explorer mes compétences en détail.",
                 lang_native: "Langue Maternelle",
-                lang_inter_adv: "Intermédiaire/Avancé",
-                lang_basic: "Base",
-                skills_tag: "Expertise",
-                skills_title: "Boîte à Outils Créative",
-                skills_desc: "Maîtrise complète de la suite logicielle leader de l'industrie pour réaliser des projets d'édition, web et vidéo.",
-                skills_cat_1: "Design & Édition",
-                skills_cat_1_desc: "Création de matériel éditorial, bannières et production multimédia haute performance.",
-                skills_cat_2: "Web & UI/UX",
-                skills_cat_2_desc: "Conception de parcours interactifs et intégration de sites modernes.",
-                skills_cat_3: "Intelligence Artificielle",
-                skills_cat_3_desc: "Optimisation avancée des flux créatifs et génération d'actifs graphiques de pointe.",
+                lang_inter_adv: "Intermédiaire / Avancé",
+                lang_basic: "Débutant / Base",
+                lang_pt_desc: "100% • Maîtrise totale, rédaction créative et communication fluide.",
+                lang_fr_desc: "80% • Rédaction professionnelle, réunions et pitchs de design.",
+                lang_es_desc: "75% • Conversation fluide et excellente compréhension technique.",
+                lang_en_desc: "45% • Lecture technique, terminologie UI/UX et bases de l'industrie.",
                 timeline_tag: "Parcours",
                 timeline_title: "Expérience & Formation",
                 timeline_desc: "Un aperçu détaillé de mes engagements passés et de mes bases académiques.",
@@ -873,7 +889,7 @@
                 exp_title_1: "Designer Graphique & UI/UX Indépendant (Freelancer)",
                 exp_loc_1: "Montréal, Québec",
                 exp_desc_1_pt1: "Conception et développement de l'identité visuelle complète et de matériel promotionnel (bannières) pour des commerces de détail locaux, incluant le <strong>Dépanneur Holla Panini</strong>.",
-                exp_desc_1_pt2: "Création de cartes de visite haut de gamme personnalisées pour représenter de manière élégante l'identité de marque de l'entreprise <strong>FREYWILLE</strong>.",
+                exp_desc_1_pt2: "Création de cartes de visite haut de gamme personnalisées pour representar de maneira elegante l'identité de marque de l'entreprise <strong>FREYWILLE</strong>.",
                 exp_desc_1_pt3: "Gestion autonome de l'intégralité des projets créatifs, de l'analyse des besoins du client à la livraison des livrables finaux optimisés pour l'impression et les médias web.",
                 exp_title_2: "Concepteur d'Interface UI/UX & Designer Graphique",
                 exp_desc_2_pt1: "Développement complet de l'interface utilisateur (UI) de l'application mobile, en veillant à une expérience utilisateur (UX) fluide, ergonomique et visuellement cohérente.",
@@ -927,8 +943,7 @@
                 hero_status_pill: "HIRE ME",
                 stat_exp: "Years Experience",
                 stat_projects: "Successful Projects",
-                stat_satisfaction: "Client satisfaction",
-                stat_gamejams: "Game Jams",
+                stat_gamejams: "Game Jam Won",
                 stat_languages: "Languages Mastered",
                 about_tag: "About me",
                 about_title: "Ready to elevate the visual impact of your brand.",
@@ -943,18 +958,14 @@
                 about_bullet_4_desc: "Fast creation of high-fidelity visual assets and automated designer pipelines.",
                 about_more_btn: "View Contact Profile",
                 languages_title: "Languages Spoken",
+                languages_instruction: "Click on each language to explore my technical proficiencies.",
                 lang_native: "Native Language",
-                lang_inter_adv: "Intermediate/Advanced",
-                lang_basic: "Basic",
-                skills_tag: "Expertise",
-                skills_title: "Creative Toolkit",
-                skills_desc: "Full mastery of leading industry software packages to develop print, web, and video media.",
-                skills_cat_1: "Design & Editing",
-                skills_cat_1_desc: "Publishing layout, branding systems, and high-performance multimedia assets.",
-                skills_cat_2: "Web & UI/UX",
-                skills_cat_2_desc: "Interactive journeys, modern interface architecture, and web integration.",
-                skills_cat_3: "Artificial Intelligence",
-                skills_cat_3_desc: "Advanced creative process acceleration and prompt engineering optimization.",
+                lang_inter_adv: "Intermediate / Advanced",
+                lang_basic: "Beginner / Basic",
+                lang_pt_desc: "100% • Native fluency, creative copywriting, and design leadership.",
+                lang_fr_desc: "80% • Professional writing, presentations, and client liaison.",
+                lang_es_desc: "75% • Fluent conversation, creative reading, and technical understanding.",
+                lang_en_desc: "45% • Technical documentation, UI/UX terminology, and daily industry basics.",
                 timeline_tag: "Career Timeline",
                 timeline_title: "Experience & Education",
                 timeline_desc: "A detailed breakdown of my academic qualifications and corporate history.",
@@ -1003,14 +1014,33 @@
             }
         };
 
-        // Default language
         let currentLanguage = 'fr';
 
-        // Translation application function
+        function toggleLanguage(langId) {
+            const panel = document.getElementById(`panel-${langId}`);
+            const chevron = document.getElementById(`chevron-${langId}`);
+            const activeHeight = '75px'; // Ideal max-height limit for clean slide
+            
+            if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+                panel.style.maxHeight = '0px';
+                chevron.classList.remove('rotate-180');
+            } else {
+                // Close other panels for neat accordion effect
+                ['pt', 'fr', 'es', 'en_lang'].forEach(id => {
+                    const p = document.getElementById(`panel-${id}`);
+                    const c = document.getElementById(`chevron-${id}`);
+                    if (p) p.style.maxHeight = '0px';
+                    if (c) c.classList.remove('rotate-180');
+                });
+                
+                panel.style.maxHeight = activeHeight;
+                chevron.classList.add('rotate-180');
+            }
+        }
+
         function switchLanguage(lang) {
             currentLanguage = lang;
             
-            // Highlight current button
             const btnFr = document.getElementById('btn-fr');
             const btnEn = document.getElementById('btn-en');
             
@@ -1026,7 +1056,6 @@
                 btnFr.classList.add('text-gray-400', 'hover:text-white');
             }
 
-            // Update all elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
@@ -1035,31 +1064,23 @@
             });
         }
 
-        // Contact Form Submission Simulation
         function handleFormSubmit(e) {
             e.preventDefault();
             const feedback = document.getElementById('form-feedback');
             
-            // Show feedback message dynamically translating based on state
             feedback.classList.remove('hidden');
             feedback.innerHTML = translations[currentLanguage]['contact_form_success'] || 'Message sent!';
             
-            // Clear inputs
             document.getElementById('contact-form').reset();
             
-            // Fade out feedback after 5 seconds
             setTimeout(() => {
                 feedback.classList.add('hidden');
             }, 5000);
         }
 
-        // Initialize default view translation
         window.addEventListener('DOMContentLoaded', () => {
             switchLanguage('fr');
         });
     </script>
 </body>
 </html>
-```eaf
-
-As duas páginas agora estão totalmente integradas. Ao clicar em **À Propos** no menu superior, no rodapé ou no novo botão de ação na seção sobre mim da página inicial, o usuário será levado diretamente para o layout focado de dados e contato simplificado (`about.html`).
