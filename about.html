@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herllyson Souza | À Propos - About</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Syne & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#08080a',
+                        cardBg: '#111216',
+                        accent: '#10b981', // Emerald/Mint from reference image_5ce97a.png
+                        accentHover: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #08080a;
+            color: #f3f4f6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glow-border {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.05);
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.25);
+        }
+    </style>
+</head>
+<body class="h-full flex items-center justify-center relative px-4 overflow-hidden">
+
+    <!-- Abstract premium ambient glow in the background -->
+    <div class="absolute w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+    <div class="w-full max-w-lg relative z-10">
+        
+        <!-- Subpage Utilities Menu -->
+        <div class="flex items-center justify-between mb-6">
+            <a href="index.html" class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-accent transition-colors duration-300 font-medium group">
+                <i class="fas fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
+                <span data-i18n="back_link">Retour au Portfolio</span>
+            </a>
+
+            <!-- Translation switches (FR and EN) -->
+            <div class="flex bg-white/5 p-1 rounded-full border border-white/10 text-[10px]">
+                <button id="btn-fr" onclick="switchLanguage('fr')" class="px-2.5 py-1 rounded-full font-bold transition-all duration-300 bg-accent text-darkBg">FR</button>
+                <button id="btn-en" onclick="switchLanguage('en')" class="px-2.5 py-1 rounded-full font-bold transition-all duration-300 text-gray-400 hover:text-white">EN</button>
+            </div>
+        </div>
+
+        <!-- Elegant minimalist Bio Card -->
+        <div class="bg-cardBg border border-white/5 rounded-3xl p-8 glow-border transition-all duration-500 relative overflow-hidden">
+            
+            <!-- Structural Arch Line representing the arch-theme of the image_5ce97a.png -->
+            <div class="absolute top-0 right-0 w-32 h-32 border-r border-t border-accent/10 rounded-tr-3xl pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-24 h-24 border-r border-t border-accent/5 rounded-tr-full pointer-events-none"></div>
+
+            <!-- Profile Overview Header -->
+            <div class="flex items-center gap-5 pb-6 border-b border-white/5">
+                <div class="relative">
+                    <div class="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent text-3xl font-heading font-extrabold">
+                        H
+                    </div>
+                    <span class="absolute -bottom-1 -right-1 w-4.5 h-4.5 bg-accent border-2 border-cardBg rounded-full flex items-center justify-center text-[8px] text-darkBg" title="Québec">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <div>
+                    <h1 class="font-heading font-extrabold text-2xl tracking-wide text-white">Herllyson Souza</h1>
+                    <p class="text-xs text-accent uppercase tracking-widest font-semibold mt-0.5" data-i18n="role_title">Designer Graphique & UI/UX</p>
+                </div>
+            </div>
+
+            <!-- Basic Info / Facts -->
+            <div class="py-6 space-y-4">
+                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="short_bio">
+                    Designer graphique multidisciplinaire basé à Longueuil. Je combine l'art visuel et la technique numérique pour matérialiser des expériences innovantes centrées sur l'utilisateur.
+                </p>
+
+                <!-- Information Grid -->
+                <div class="grid grid-cols-1 gap-3 pt-2">
+                    <div class="flex items-center gap-3 text-xs">
+                        <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-gray-500 uppercase block" data-i18n="label_location">Localisation</span>
+                            <span class="text-gray-300 font-medium">Longueuil, Québec, Canada</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 text-xs">
+                        <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-400">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-gray-500 uppercase block" data-i18n="label_languages">Langues parlées</span>
+                            <span class="text-gray-300 font-medium" data-i18n="languages_value">Portugais (natif), Français & Espagnol</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Contact & Email action -->
+            <div class="pt-6 border-t border-white/5 space-y-4">
+                <div class="bg-darkBg/50 border border-white/5 rounded-2xl p-4 flex items-center justify-between gap-4">
+                    <div class="truncate">
+                        <span class="text-[9px] text-gray-500 uppercase tracking-widest block mb-0.5" data-i18n="label_email">Adresse courriel</span>
+                        <span id="email-address" class="text-sm font-mono text-white font-medium select-all truncate">herllyson.canada@gmail.com</span>
+                    </div>
+                    
+                    <!-- Copy Action Button -->
+                    <button onclick="copyEmailToClipboard()" class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 hover:bg-accent hover:text-darkBg text-accent flex items-center justify-center transition-all duration-300 active:scale-95 group" title="Copier l'adresse email">
+                        <i id="copy-icon" class="far fa-copy text-sm group-hover:scale-105"></i>
+                    </button>
+                </div>
+
+                <!-- Custom Inline notification (No alerts allowed) -->
+                <div id="toast-message" class="hidden transition-all duration-300 text-center py-2.5 rounded-xl bg-accent/10 border border-accent/20 text-xs text-accent font-medium">
+                    <span data-i18n="email_copied">E-mail copié dans le presse-papiers !</span>
+                </div>
+
+                <!-- Direct Email trigger -->
+                <a href="mailto:herllyson.canada@gmail.com" class="w-full py-3.5 bg-accent hover:bg-accentHover text-darkBg font-bold text-sm rounded-2xl flex items-center justify-center gap-2 transition-all duration-300">
+                    <span data-i18n="btn_write_me">M'écrire un message</span>
+                    <i class="fas fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Social Links footer element -->
+            <div class="flex items-center justify-center gap-6 mt-6 pt-2">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent transition-colors" title="LinkedIn">
+                    <i class="fab fa-linkedin text-lg"></i>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent transition-colors" title="GitHub">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent transition-colors" title="Behance">
+                    <i class="fab fa-behance text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Dictionary mapping values
+        const translations = {
+            fr: {
+                back_link: "Retour au Portfolio",
+                role_title: "Designer Graphique & UI/UX",
+                short_bio: "Designer graphique multidisciplinaire basé à Longueuil. Je combine l'art visuel et la technique numérique pour matérialiser des expériences innovantes centrées sur l'utilisateur.",
+                label_location: "Localisation",
+                label_languages: "Langues parlées",
+                languages_value: "Portugais (natif), Français & Espagnol",
+                label_email: "Adresse courriel",
+                btn_write_me: "M'écrire un message",
+                email_copied: "L'adresse courriel a été copiée !"
+            },
+            en: {
+                back_link: "Back to Portfolio",
+                role_title: "Graphic & UI/UX Designer",
+                short_bio: "Multidisciplinary graphic designer based in Longueuil. I combine visual art and digital craft to materialize innovative, user-centered digital solutions.",
+                label_location: "Location",
+                label_languages: "Languages Spoken",
+                languages_value: "Portuguese (Native), French & Spanish",
+                label_email: "Email Address",
+                btn_write_me: "Write me an email",
+                email_copied: "Email address copied to clipboard!"
+            }
+        };
+
+        let currentLang = 'fr';
+
+        // Translation Engine function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'fr') {
+                btnFr.classList.add('bg-accent', 'text-darkBg');
+                btnFr.classList.remove('text-gray-400');
+                btnEn.classList.remove('bg-accent', 'text-darkBg');
+                btnEn.classList.add('text-gray-400', 'hover:text-white');
+            } else {
+                btnEn.classList.add('bg-accent', 'text-darkBg');
+                btnEn.classList.remove('text-gray-400');
+                btnFr.classList.remove('bg-accent', 'text-darkBg');
+                btnFr.classList.add('text-gray-400', 'hover:text-white');
+            }
+
+            // Iterate over translations
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Compliant Copy function suited for platform iFrames
+        function copyEmailToClipboard() {
+            const emailText = document.getElementById('email-address').innerText;
+            
+            // Create fallback input elements according to system requirements
+            const tempInput = document.createElement('textarea');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Trigger custom toast notification
+            const toast = document.getElementById('toast-message');
+            const icon = document.getElementById('copy-icon');
+
+            toast.classList.remove('hidden');
+            icon.className = "fas fa-check text-sm"; // change copy icon to checked checkmark
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                icon.className = "far fa-copy text-sm"; // restore original icon state
+            }, 3000);
+        }
+
+        // Page initialization sequence
+        window.addEventListener('DOMContentLoaded', () => {
+            switchLanguage('fr');
+        });
+    </script>
+</body>
+</html>
