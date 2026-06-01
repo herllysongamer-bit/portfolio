@@ -120,7 +120,7 @@
             <!-- Desktop Navigation Menu -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
                 <a href="#accueil" class="hover:text-accent transition-colors duration-200" data-i18n="nav_home">Accueil</a>
-                <a href="#about" class="hover:text-accent transition-colors duration-200" data-i18n="nav_about">À Propos</a>
+                <a href="about.html" class="hover:text-accent transition-colors duration-200" data-i18n="nav_about">À Propos</a>
                 <a href="#competences" class="hover:text-accent transition-colors duration-200" data-i18n="nav_skills">Compétences</a>
                 <a href="#experience" class="hover:text-accent transition-colors duration-200" data-i18n="nav_experience">Parcours</a>
                 <a href="#projets" class="hover:text-accent transition-colors duration-200" data-i18n="nav_projects">Projets</a>
@@ -353,81 +353,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="competences" class="no-print py-20 bg-cardBg relative border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-accent tracking-widest uppercase block mb-2" data-i18n="skills_tag">Expertise</span>
-                <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-white" data-i18n="skills_title">Boîte à Outils Créative</h2>
-                <p class="text-gray-400 mt-4" data-i18n="skills_desc">Maîtrise complète de la suite logicielle leader de l'industrie pour réaliser des projets d'édition, web et vidéo.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Design & Edition -->
-                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 flex flex-col justify-between hover:border-accent/20 transition-all duration-300">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-6">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2" data-i18n="skills_cat_1">Design & Édition</h3>
-                        <p class="text-gray-400 text-sm mb-6" data-i18n="skills_cat_1_desc">Création de matériel éditorial, bannières et production multimédia haute performance.</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Photoshop</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Illustrator</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">InDesign</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">After Effects</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Premiere Pro</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">CapCut</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Blender</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Maya</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Integration & UI/UX -->
-                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 flex flex-col justify-between hover:border-accent/20 transition-all duration-300">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-6">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2" data-i18n="skills_cat_2">Web & UI/UX</h3>
-                        <p class="text-gray-400 text-sm mb-6" data-i18n="skills_cat_2_desc">Conception de parcours interactifs et intégration de sites modernes.</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">UI/UX Design</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Figma</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">HTML5</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">CSS3 / Tailwind</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Git / GitHub</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Prototypage</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Tools & Optimization -->
-                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 flex flex-col justify-between hover:border-accent/20 transition-all duration-300">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-6">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2" data-i18n="skills_cat_3">Intelligence Artificielle</h3>
-                        <p class="text-gray-400 text-sm mb-6" data-i18n="skills_cat_3_desc">Optimisation avancée des flux créatifs et génération d'actifs graphiques de pointe.</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">IA Generative</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Midjourney</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Stable Diffusion</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Workflow Automatisation</span>
-                            <span class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-xs text-gray-300">Prompt Engineering</span>
-                        </div>
-                    </div>
+                <!-- Call to Action button to about.html -->
+                <div class="pt-4">
+                    <a href="about.html" class="glow-hover inline-flex items-center gap-3 bg-white/5 hover:bg-accent hover:text-darkBg border border-white/10 hover:border-accent text-white font-bold px-6 py-3.5 rounded-full transition-all duration-300 text-sm">
+                        <span data-i18n="about_more_btn">Voir ma Fiche de Contact</span>
+                        <i class="fas fa-id-card text-xs"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -873,7 +805,7 @@
             
             <div class="flex gap-6 text-xs text-gray-400">
                 <a href="#accueil" class="hover:text-accent transition-colors" data-i18n="nav_home">Accueil</a>
-                <a href="#about" class="hover:text-accent transition-colors" data-i18n="nav_about">À Propos</a>
+                <a href="about.html" class="hover:text-accent transition-colors" data-i18n="nav_about">À Propos</a>
                 <a href="#experience" class="hover:text-accent transition-colors" data-i18n="nav_experience">Parcours</a>
                 <a href="#projets" class="hover:text-accent transition-colors" data-i18n="nav_projects">Projets</a>
             </div>
@@ -916,6 +848,7 @@
                 about_bullet_3_desc: "Expériences au sein d'instituts de recherche officiels (IPEA) et PME.",
                 about_bullet_4_title: "Workflow Optimisé IA",
                 about_bullet_4_desc: "Création rapide d'actifs créatifs et automatisation des pipelines.",
+                about_more_btn: "Voir ma Fiche de Contact",
                 languages_title: "Langues parlées",
                 lang_native: "Langue Maternelle",
                 lang_inter_adv: "Intermédiaire/Avancé",
@@ -1008,6 +941,7 @@
                 about_bullet_3_desc: "Professional background within official research institutes (IPEA) and local SMBs.",
                 about_bullet_4_title: "AI-Optimized Workflow",
                 about_bullet_4_desc: "Fast creation of high-fidelity visual assets and automated designer pipelines.",
+                about_more_btn: "View Contact Profile",
                 languages_title: "Languages Spoken",
                 lang_native: "Native Language",
                 lang_inter_adv: "Intermediate/Advanced",
@@ -1126,3 +1060,6 @@
     </script>
 </body>
 </html>
+```eaf
+
+As duas páginas agora estão totalmente integradas. Ao clicar em **À Propos** no menu superior, no rodapé ou no novo botão de ação na seção sobre mim da página inicial, o usuário será levado diretamente para o layout focado de dados e contato simplificado (`about.html`).
