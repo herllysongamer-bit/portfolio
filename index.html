@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Settings, Download, Calendar, ChevronRight } from 'lucide-react';
+import { Settings, Download, Calendar, Printer } from 'lucide-react';
 
 const SALARY_HISTORY = [
   { year: 2022, rate: 18.00 },
@@ -9,17 +9,17 @@ const SALARY_HISTORY = [
 
 export default function App() {
   const [selectedYear, setSelectedYear] = useState(2024);
-  const [selectedMonth, setSelectedMonth] = useState(8); // Agosto (0-11)
+  const [selectedMonth, setSelectedMonth] = useState(8); 
   const [selectedDate, setSelectedDate] = useState(null);
 
   const employee = {
-    name: "Da Silva Souza, Herllyson",
+    name: "DA SILVA SOUZA, HERLLYSON",
     matricule: "000005172",
-    addressLine1: "11145 rue Meighen # 815",
-    addressLine2: "Pierrefonds QC H8Y 3H6",
-    fonction: "Soudeur",
+    addressLine1: "11145 RUE MEIGHEN # 815",
+    addressLine2: "PIERREFONDS QC H8Y 3H6",
+    fonction: "SOUDEUR",
     hireDate: "2022/01/12",
-    company: "TTI Fabrication Inc.",
+    company: "TTI FABRICATION INC.",
     cieNo: "00032782",
     bankAccount: "8**_*****_***7294",
     service: "541"
@@ -39,7 +39,6 @@ export default function App() {
 
   const payDates = useMemo(() => getThursdays(selectedYear, selectedMonth), [selectedYear, selectedMonth]);
   
-  // Define a primeira quinta-feira por padrão ao mudar o mês
   React.useEffect(() => {
     if (payDates.length > 0) setSelectedDate(payDates[0]);
   }, [payDates]);
@@ -50,15 +49,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#525659] flex flex-col md:flex-row font-sans">
-      
-      <aside className="w-full md:w-80 bg-white border-r border-gray-300 p-6 flex flex-col gap-6 shadow-2xl print:hidden h-screen sticky top-0 z-10">
+    <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row font-sans">
+      <aside className="w-full md:w-80 bg-white border-r border-gray-200 p-6 flex flex-col gap-6 shadow-sm print:hidden h-screen sticky top-0 z-10">
         <h1 className="text-xl font-bold text-gray-800 border-b pb-4">Générateur Nethris TTI</h1>
 
         <div className="space-y-4">
           <div>
             <label className="text-xs font-bold text-gray-500 uppercase">Année</label>
-            <select className="w-full mt-1 border rounded p-2" value={selectedYear} onChange={(e) => setSelectedYear(parseInt(e.target.value))}>
+            <select className="w-full mt-1 border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-500 outline-none" value={selectedYear} onChange={(e) => setSelectedYear(parseInt(e.target.value))}>
               <option value={2022}>2022</option>
               <option value={2023}>2023</option>
               <option value={2024}>2024</option>
@@ -66,7 +64,7 @@ export default function App() {
           </div>
           <div>
             <label className="text-xs font-bold text-gray-500 uppercase">Mois</label>
-            <select className="w-full mt-1 border rounded p-2" value={selectedMonth} onChange={(e) => setSelectedMonth(parseInt(e.target.value))}>
+            <select className="w-full mt-1 border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-500 outline-none" value={selectedMonth} onChange={(e) => setSelectedMonth(parseInt(e.target.value))}>
               {['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'].map((m, i) => (
                 <option key={i} value={i}>{m}</option>
               ))}
@@ -80,18 +78,19 @@ export default function App() {
             <button 
               key={i}
               onClick={() => setSelectedDate(d)}
-              className={`w-full text-left p-3 rounded mb-2 border ${selectedDate?.getTime() === d.getTime() ? 'bg-blue-600 text-white' : 'bg-gray-50'}`}
+              className={`w-full text-left p-3 rounded mb-2 border transition-colors ${selectedDate?.getTime() === d.getTime() ? 'bg-blue-600 text-white border-blue-700' : 'bg-gray-50 border-gray-200 hover:bg-gray-100'}`}
             >
               {d.toLocaleDateString('fr-CA')}
             </button>
           ))}
         </div>
 
-        <button onClick={() => window.print()} className="bg-gray-800 text-white py-3 rounded font-bold hover:bg-black">Imprimer le reçu</button>
+        <button onClick={() => window.print()} className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white py-3 rounded font-bold hover:bg-black transition-all">
+          <Printer size={18} /> Imprimer le reçu
+        </button>
       </aside>
 
-      {}
-      <main className="flex-1 flex justify-center p-8 overflow-auto">
+      <main className="flex-1 flex justify-center p-4 md:p-12 overflow-auto bg-gray-200">
         {selectedDate && (
           <PayStub 
             date={selectedDate} 
@@ -112,59 +111,95 @@ function PayStub({ date, employee, rate }) {
   const hours = 40;
   const gross = hours * rate;
   const deductions = {
-    rrq: gross * 0.055,
-    ei: gross * 0.012,
-    rqap: gross * 0.005,
-    fed: gross * 0.065,
-    prov: gross * 0.08
+    "R.R.Q.": gross * 0.055,
+    "A.E.": gross * 0.012,
+    "R.Q.A.P.": gross * 0.005,
+    "IMPÔT FÉDÉRAL": gross * 0.065,
+    "IMPÔT PROVINCIAL": gross * 0.08
   };
   const totalDed = Object.values(deductions).reduce((a, b) => a + b, 0);
   const net = gross - totalDed;
 
   return (
-    <div className="bg-white w-[850px] min-h-[1100px] p-8 shadow-2xl print:shadow-none print:m-0" style={{ fontFamily: '"Courier New", Courier, monospace', fontSize: '12px' }}>
-      {/* Cabeçalho */}
-      <div className="flex justify-between mb-8 border-b border-black pb-4">
-        <div>
-           <div className="text-[#e31837] font-bold text-4xl tracking-tighter">nethris {'}'}</div>
-           <div className="mt-4 font-bold">COMPAGNIE: {employee.company}</div>
-           <div>MATRICULE: {employee.matricule}</div>
-           <div>FONCTION: {employee.fonction}</div>
-           <div>SALAIRE: {rate.toFixed(4)}</div>
-        </div>
-        <div className="text-right">
-           <div className="font-bold">CONFIDENTIEL</div>
-           <div className="mt-4">DATE PAYABLE: {date.toLocaleDateString('fr-CA')}</div>
-           <div>PÉRIODE: {periodStart.toLocaleDateString('fr-CA')} - {periodEnd.toLocaleDateString('fr-CA')}</div>
+    <div className="bg-white w-full max-w-[850px] min-h-[1100px] p-10 shadow-xl print:shadow-none print:m-0 print:w-full" style={{ fontFamily: '"Courier New", Courier, monospace', fontSize: '13px', lineHeight: '1.4' }}>
+      
+      {/* Header */}
+      <div className="border-b-2 border-black pb-6 mb-6">
+        <div className="flex justify-between items-start">
+           <div>
+              <h1 className="text-3xl font-black text-red-600 mb-4">nethris</h1>
+              <div className="text-sm font-bold">COMPAGNIE: {employee.company}</div>
+              <div className="text-sm">MATRICULE: {employee.matricule}</div>
+              <div className="text-sm">FONCTION: {employee.fonction}</div>
+           </div>
+           <div className="text-right">
+              <div className="font-bold text-lg mb-2">REÇU DE PAIE</div>
+              <div className="text-sm">DATE: {date.toLocaleDateString('fr-CA')}</div>
+              <div className="text-sm">PÉRIODE: {periodStart.toLocaleDateString('fr-CA')} AU {periodEnd.toLocaleDateString('fr-CA')}</div>
+           </div>
         </div>
       </div>
 
-      {/* Tabela */}
-      <div className="w-full border-b-2 border-black border-t border-black mb-4">
-         <div className="grid grid-cols-4 font-bold p-1 border-b border-black">
-            <div>GAINS</div><div>TAUX</div><div>QTÉS</div><div>MONTANTS</div>
-         </div>
-         <div className="grid grid-cols-4 p-1">
-            <div>HRES REGU</div><div>{rate.toFixed(4)}</div><div>{hours.toFixed(2)}</div><div>{gross.toFixed(2)}</div>
-         </div>
+      {/* Info Employee */}
+      <div className="mb-8 p-4 border border-gray-300 bg-gray-50">
+        <div className="grid grid-cols-2 gap-4">
+            <div>
+                <p className="font-bold text-gray-700">{employee.name}</p>
+                <p>{employee.addressLine1}</p>
+                <p>{employee.addressLine2}</p>
+            </div>
+            <div className="text-right text-sm">
+                <p>CIE: {employee.cieNo}</p>
+                <p>COMPTE: {employee.bankAccount}</p>
+                <p>SERVICE: {employee.service}</p>
+            </div>
+        </div>
       </div>
 
-      {/* Deduções */}
-      <div className="w-full border-b-2 border-black mb-4">
-         <div className="grid grid-cols-2 font-bold p-1 border-b border-black">
-            <div>DÉDUCTIONS</div><div>MONTANTS</div>
-         </div>
+      {/* Earnings */}
+      <div className="mb-8">
+        <div className="border-b-2 border-black flex font-bold pb-1 mb-2">
+           <div className="w-1/2">GAINS</div>
+           <div className="w-1/4 text-right">TAUX</div>
+           <div className="w-1/4 text-right">MONTANT</div>
+        </div>
+        <div className="flex border-b border-gray-200 py-1">
+           <div className="w-1/2">SALAIRE RÉGULIER (40.00 HRS)</div>
+           <div className="w-1/4 text-right">{rate.toFixed(2)}</div>
+           <div className="w-1/4 text-right">{gross.toFixed(2)}</div>
+        </div>
+        <div className="flex font-bold pt-2">
+           <div className="w-3/4 text-right">TOTAL GAINS:</div>
+           <div className="w-1/4 text-right border-t border-black">{gross.toFixed(2)}</div>
+        </div>
+      </div>
+
+      {/* Deductions */}
+      <div className="mb-8">
+         <div className="border-b-2 border-black font-bold pb-1 mb-2">DÉDUCTIONS</div>
          {Object.entries(deductions).map(([k, v]) => (
-            <div key={k} className="grid grid-cols-2 p-1 uppercase">
-               <div>{k}</div><div>{v.toFixed(2)}</div>
+            <div key={k} className="flex justify-between py-0.5">
+               <div className="uppercase">{k}</div>
+               <div>{v.toFixed(2)}</div>
             </div>
          ))}
+         <div className="flex justify-between font-bold pt-2 border-t border-gray-300 mt-2">
+             <div>TOTAL DÉDUCTIONS</div>
+             <div>{totalDed.toFixed(2)}</div>
+         </div>
       </div>
 
-      {/* Resumo */}
-      <div className="flex justify-between font-bold text-lg mt-4 border-t-2 border-black pt-4">
-        <div>PAIE NETTE:</div>
-        <div>${net.toFixed(2)}</div>
+      {/* Summary */}
+      <div className="mt-12 border-t-4 border-black pt-4">
+        <div className="flex justify-between text-xl font-black">
+          <div>PAIE NETTE À PAYER</div>
+          <div>${net.toFixed(2)}</div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-20 text-center text-xs text-gray-400">
+        Ceci est une simulation générée pour des fins de visualisation.
       </div>
     </div>
   );
